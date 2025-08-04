@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Motors | Luxury Car Dealership</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: rgba(4,2,3);
+            --secondary: #f1721d;
+            --accent: #00a8ff;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .icaurlogo {
+
+
+    width:200px;
+    height:40px;
+    display: inline-block;
+    margin:10px;
+}
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--secondary);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--gray);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(4,2,3,0.7);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: rgba(4,2,3,1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--secondary);
+            font-size: 32px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 37, 64, 0.3), rgba(10, 37, 64, 0.4)), url('https://www.lowyat.net/wp-content/uploads/2025/04/iCAUR-Malaysia-teaser-1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Featured Cars */
+        .car-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .car-img {
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .car-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .car-info {
+            padding: 25px;
+        }
+
+        .car-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .car-title h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .car-price {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .car-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .spec {
+            display: flex;
+            align-items: center;
+        }
+
+        .spec i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .car-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Services Section */
+        .services {
+            background: rgba(4,2,3);
+            color: white;
+        }
+
+        .services .section-title h2 {
+            color: white;
+        }
+
+        .services .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgb(31, 31, 31);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgb(26, 26, 26);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid var(--secondary);
+        }
+
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .client-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .client-position {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: var(--secondary);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(4,2,3);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: var(--primary);
+                transition: left 0.3s ease;
+                padding: 30px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+        #scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10000;
+  background-color: rgba(4,2,3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(4, 14, 19, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#scrollToTopBtn:hover,
+#scrollToTopBtn:focus {
+  background-color: #0d0f11;
+  outline: none;
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#whatsappBtn {
+  position: fixed;
+  bottom: 90px; /* 30px (scroll btn bottom) + 48px (scroll btn height) + 12px margin */
+  right: 30px;
+  background-color: #25d366;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10000;
+}
+
+#whatsappBtn:hover,
+#whatsappBtn:focus {
+  background-color: #1ebe5d;
+  outline: none;
+}
+
+#whatsappBtn svg {
+  pointer-events: none;
+  user-select: none;
+  display: block;
+}
+    </style>
+</head>
+<body>
+    <!-- WhatsApp button -->
+    <a href="https://wa.me/1234567890?text=Hello%20I%20am%20interested%20in%20your%20cars" 
+        target="_blank" rel="noreferrer noopener" 
+        id="whatsappBtn" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white" width="28px" height="28px" aria-hidden="true" focusable="false">
+            <path d="M20.52 3.48A11.856 11.856 0 0012-0.5a11.9 11.9 0 00-10.93 6.02A11.9 11.9 0 001.43 17.4l-1.33 5.76 5.67-1.5a11.915 11.915 0 002.58 0c6.34 0 11.51-5.17 11.51-11.51 0-3.08-1.2-5.97-3.34-8.07zM12 21.95a9.82 9.82 0 01-5.3-1.57l-.38-.23-3.37.89.89-3.31-.25-.36a9.827 9.827 0 01-1.61-5.58c0-5.43 4.43-9.85 9.85-9.85a9.814 9.814 0 016.96 2.89 9.79 9.79 0 012.89 6.96c0 5.42-4.42 9.83-9.81 9.83zm5.51-7.18c-.3-.15-1.77-.87-2.04-.97s-.47-.15-.67.15-.77.97-.95 1.17-.35.22-.65.08a7.2 7.2 0 01-2.13-1.31 8.09 8.09 0 01-1.5-1.85c-.16-.27 0-.41.12-.56.13-.13.3-.34.45-.51a1.93 1.93 0 00.29-.48.54.54 0 00-.02-.51c-.07-.15-.67-1.63-.92-2.24s-.47-.53-.65-.54a.9.9 0 00-.54-.07c-.16 0-.35.05-.53.05s-.51.07-.78.37a3.34 3.34 0 00-1.22 1.2c-.51.89-1 2.34-1 3.3s1.04 3.85 2.38 5.08 3.49 2.33 5.08 2.45 2.73-.68 3.02-1.33c.3-.65.3-1.18.21-1.29-.1-.12-.37-.19-.7-.34z"/>
+        </svg>
+        </a>
+
+<!-- Scroll to top button -->
+<button id="scrollToTopBtn" aria-label="Scroll to top">&#8679;</button>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">&#8679;</button>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <nav>
+                <ul>
+                    <li><a href="#inventory">Inventory</a></li>
+                    <li><a href="#services">Services</a></li>
+                    
+                </ul>
+            </nav>
+            <div class="logo">
+                <img src="ICar_2024_logo.png" class="icaurlogo" />
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact us">Contact</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>BORN TO PLAY</h1>
+                <p>Premium Motors offers the finest selection of luxury vehicles with exceptional service and competitive pricing. Find your perfect match from our extensive inventory.</p>
+                <div class="hero-btns">
+                    <a href="#inventory" class="btn btn-primary">Browse Inventory</a>
+                    <a href="#contact" class="btn btn-secondary">Schedule Test Drive</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cars -->
+    <section id="inventory">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Vehicles</h2>
+                <p>Explore our hand-picked selection of premium vehicles that combine performance, luxury, and value.</p>
+            </div>
+            
+            <div class="car-filters">
+                <button class="filter-btn active">All Brands</button>
+                <button class="filter-btn">Luxury</button>
+                <button class="filter-btn">SUV</button>
+                <button class="filter-btn">Sports</button>
+                <button class="filter-btn">Electric</button>
+            </div>
+            
+            <div class="cars-grid">
+                <!-- Car 1 -->
+                <div class="car-card">
+                    <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=975&q=80');">
+                        <span class="car-badge">New Arrival</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-title">
+                            <h3>Mercedes-Benz S-Class</h3>
+                            <div class="car-price">$105,900</div>
+                        </div>
+                        <p>The pinnacle of luxury with cutting-edge technology and unparalleled comfort.</p>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>3.5s 0-60mph</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Hybrid</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-cogs"></i>
+                                <span>Automatic</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-road"></i>
+                                <span>12,500 miles</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="#" class="btn btn-secondary">Details</a>
+                            <a href="#" class="btn btn-primary">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 2 -->
+                <div class="car-card">
+                    <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <span class="car-badge">Low Mileage</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-title">
+                            <h3>Porsche 911 Turbo</h3>
+                            <div class="car-price">$165,500</div>
+                        </div>
+                        <p>Iconic sports car with blistering performance and timeless design.</p>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>2.8s 0-60mph</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Premium</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-cogs"></i>
+                                <span>PDK Automatic</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-road"></i>
+                                <span>8,200 miles</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="#" class="btn btn-secondary">Details</a>
+                            <a href="#" class="btn btn-primary">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 3 -->
+                <div class="car-card">
+                    <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <span class="car-badge">Certified</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-title">
+                            <h3>Range Rover Velar</h3>
+                            <div class="car-price">$72,800</div>
+                        </div>
+                        <p>Sophisticated SUV with commanding presence and premium craftsmanship.</p>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>5.3s 0-60mph</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-cogs"></i>
+                                <span>Automatic</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-road"></i>
+                                <span>18,300 miles</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="#" class="btn btn-secondary">Details</a>
+                            <a href="#" class="btn btn-primary">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Services</h2>
+                <p>We go beyond just selling cars. Our comprehensive services ensure your complete satisfaction.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Vehicle Financing</h3>
+                    <p>Competitive rates and flexible terms tailored to your financial situation.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Expert Maintenance</h3>
+                    <p>Factory-trained technicians using genuine parts for optimal performance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Trade-In Evaluation</h3>
+                    <p>Get top dollar for your current vehicle with our fair appraisal process.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Extended Warranty</h3>
+                    <p>Comprehensive protection plans for peace of mind on the road.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+<section id="testimonials" aria-label="Customer testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>Customer Testimonials</h2>
+            <p>Hear what our satisfied customers have to say about their experience with us.</p>
+        </div>
+        
+        <div class="testimonials-container" role="region" aria-label="Testimonial slider">
+            <!-- Testimonial Items -->
+            <div class="testimonial active" aria-hidden="false">
+                <div class="client-img">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Johnson" width="80" height="80">
+                </div>
+                <blockquote class="testimonial-text">
+                    <p>"The team at Premium Motors made my car buying experience exceptional. They found exactly what I was looking for and negotiated a great deal. I couldn't be happier with my new Mercedes!"</p>
+                </blockquote>
+                <div class="client-info">
+                    <div class="client-name">Robert Johnson</div>
+                    <div class="client-position">Business Executive</div>
+                </div>
+            </div>
+            
+            <div class="testimonial" aria-hidden="true">
+                <div class="client-img">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Williams" width="80" height="80">
+                </div>
+                <blockquote class="testimonial-text">
+                    <p>"I was nervous about buying a luxury car for the first time, but the staff walked me through every step. Their knowledge and patience made me feel completely confident in my purchase."</p>
+                </blockquote>
+                <div class="client-info">
+                    <div class="client-name">Sarah Williams</div>
+                    <div class="client-position">Marketing Director</div>
+                </div>
+            </div>
+            
+            <div class="testimonial" aria-hidden="true">
+                <div class="client-img">
+                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Chen" width="80" height="80">
+                </div>
+                <blockquote class="testimonial-text">
+                    <p>"The after-sales service has been outstanding. They remembered all my preferences and made the maintenance appointments incredibly convenient. Truly a premium experience!"</p>
+                </blockquote>
+                <div class="client-info">
+                    <div class="client-name">Michael Chen</div>
+                    <div class="client-position">Software Engineer</div>
+                </div>
+            </div>
+            
+            <!-- Navigation Dots -->
+            <div class="testimonial-nav" role="tablist" aria-label="Testimonial navigation">
+                <button class="nav-dot active" role="tab" aria-label="Show testimonial 1" aria-selected="true" tabindex="0"></button>
+                <button class="nav-dot" role="tab" aria-label="Show testimonial 2" aria-selected="false" tabindex="-1"></button>
+                <button class="nav-dot" role="tab" aria-label="Show testimonial 3" aria-selected="false" tabindex="-1"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Have questions or ready to schedule a test drive? Reach out to our team today.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Our Location</h3>
+                            <p>123 Luxury Avenue, Beverly Hills, CA 90210</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone Number</h3>
+                            <p>(888) 555-1234</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Address</h3>
+                            <p>info@premiummotors.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Working Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 8:00 PM<br>Saturday: 10:00 AM - 6:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Smith">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="(123) 456-7890">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">Vehicle Interest</label>
+                            <select id="interest">
+                                <option value="">Select a vehicle</option>
+                                <option value="mercedes">Mercedes-Benz S-Class</option>
+                                <option value="porsche">Porsche 911 Turbo</option>
+                                <option value="rangerover">Range Rover Velar</option>
+                                <option value="other">Other Models</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" placeholder="I'm interested in learning more about..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Premium Motors</h3>
+                    <p>Your trusted partner for luxury vehicles since 2005. We pride ourselves on exceptional service and an unparalleled selection of premium automobiles.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#inventory">Inventory</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Brands We Carry</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mercedes-Benz</a></li>
+                        <li><a href="#">BMW</a></li>
+                        <li><a href="#">Porsche</a></li>
+                        <li><a href="#">Audi</a></li>
+                        <li><a href="#">Land Rover</a></li>
+                        <li><a href="#">Tesla</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates on new arrivals, special offers, and events.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Premium Motors. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color:var(--secondary);"></i> for Car Enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const nav = document.querySelector('nav');
+        
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Close mobile nav when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Testimonial Slider
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.nav-dot');
+    let currentTestimonial = 0;
+    let intervalId;
+    
+    // Initialize - show first testimonial if none is active
+    if (document.querySelector('.testimonial.active') === null && testimonials.length > 0) {
+        testimonials[0].classList.add('active');
+        dots[0]?.classList.add('active');
+    }
+    
+    function showTestimonial(index) {
+        // Ensure index is within bounds
+        index = (index + testimonials.length) % testimonials.length;
+        
+        testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        testimonials[index].classList.add('active');
+        dots[index]?.classList.add('active');
+        currentTestimonial = index;
+    }
+    
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showTestimonial(index);
+            resetInterval();
+        });
+    });
+    
+    function startInterval() {
+        intervalId = setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+    }
+    
+    function resetInterval() {
+        clearInterval(intervalId);
+        startInterval();
+    }
+    
+    // Pause on hover
+    const sliderContainer = document.querySelector('.testimonial-slider'); // Add this container in your HTML
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(intervalId));
+        sliderContainer.addEventListener('mouseleave', startInterval);
+    }
+    
+    // Start the initial interval
+    startInterval();
+});
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Filter buttons active state
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
+    <script>
+  (function() {
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+
+    // Show button when scrolled down 300px
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+
+    // Scroll smoothly to top when clicked
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollBtn.blur(); // remove focus after click for accessibility
+    });
+  })();
+</script>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop form from refreshing the page
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwYgBD8d1QP0o08tZNuw__IVsNTGpztcp5hHQLyOuZCsl-SBUAANXz0H9rmwQQptaDy0w/exec"; // <-- Replace this with your deployed script URL
+
+    const data = {
+      fullName: document.getElementById("name").value,
+      emailAddress: document.getElementById("email").value,
+      phoneNumber: document.getElementById("phone").value,
+      carInterest: document.getElementById("interest").value,
+      message: document.getElementById("message").value
+    };
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+    .then(response => {
+      alert("Thank you! Your message has been sent.");
+      document.getElementById("contactForm").reset(); // Clear form
+    })
+    .catch(error => {
+      console.error("Error!", error.message);
+      alert("Oops! There was an error submitting the form.");
+    });
+  });
+</script>
+
+</body>
+</html>
