@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iCaur Bukit Jalil</title>
+    <link rel="icon" type="image/png" href="iCaur icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -17,8 +18,8 @@
 
         :root {
             --primary: rgba(4,2,3);
-            --secondary: #f1721d;
-            --accent: #00a8ff;
+            --secondary: #f37021;
+            --accent: #237BB5;
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
@@ -78,6 +79,17 @@
         }
 
         .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-3rd {
+            background: transparent;
+            color: var(--dark);
+            border: 2px solid var(--gray);
+        }
+
+        .btn-3rd:hover {
             background: var(--primary);
             color: white;
         }
@@ -237,6 +249,21 @@
             display: flex;
             gap: 20px;
         }
+
+        .hero-title {
+    text-align: center; /* centers it horizontally */
+    margin-bottom: 20px; /* space below if needed */
+}
+
+.hero-title-img {
+    display: block; /* so it behaves like text (block element) */
+    width: 400px; /* adjust as needed */
+    max-width: 100%; /* responsive */
+    
+    /* Align left with text */
+    margin-left: 0; 
+    margin-right: auto; 
+}
 
         /* Featured Cars */
         .car-filters {
@@ -756,6 +783,327 @@
   user-select: none;
   display: block;
 }
+
+    /* carousel */
+.carousel{
+    height: 100vh;
+    margin-top: -50px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.carousel .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+.carousel .list .item .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.carousel .list .item .title,
+.carousel .list .item .topic{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.carousel .list .item .topic{
+    color: #f1683a;
+}
+.carousel .list .item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.carousel .list .item .buttons button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: ;
+    font-weight: 500;
+}
+.carousel .list .item .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+/* thumbail */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.thumbnail .item .content{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .item .content .title{
+    font-weight: 500;
+}
+.thumbnail .item .content .description{
+    font-weight: 300;
+}
+/* arrows */
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.title{
+
+    
+    display: block; /* so it behaves like text (block element) */
+    width: 200px; /* adjust as needed */
+    max-width: 100%; /* responsive */
+    
+    /* Align left with text */
+    margin-left: 0; 
+    margin-right: auto; 
+}
+
+.topic{
+
+    
+    display: block; /* so it behaves like text (block element) */
+    width: 300px; /* adjust as needed */
+    max-width: 100%; /* responsive */
+    
+    /* Align left with text */
+    margin-left: 0; 
+    margin-right: auto; 
+}
+
+
+@keyframes fadeInCustom {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* animation */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.carousel .list .item:nth-child(1) .content .title{
+    animation-delay: 1.2s!important;
+}
+.carousel .list .item:nth-child(1) .content .topic{
+    animation-delay: 1.4s!important;
+}
+.carousel .list .item:nth-child(1) .content .des{
+    animation-delay: 1.6s!important;
+}
+.carousel .list .item:nth-child(1) .content .buttons{
+    animation-delay: 1.8s!important;
+}
+
+.des-black{
+    color: #000;
+    font-weight: 500;
+    font-size: 1em;
+    margin-top: 10px;
+}
+/* create animation when next click */
+.carousel.next .list .item:nth-child(1) img:not(.title img):not(.topic img) {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.prev .list .item img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* running time */
+
+.carousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    left: 0;
+    top: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+
+/* prev click */
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttons
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+}
     </style>
 </head>
 <body>
@@ -776,8 +1124,8 @@
         <div class="container header-container">
             <nav>
                 <ul>
-                    <li><a href="#inventory">Inventory</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#inventory">Cars</a></li>
                     
                 </ul>
             </nav>
@@ -787,8 +1135,8 @@
             
             <nav>
                 <ul>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact us">Contact</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Enquire now</a></li>
                     
                 </ul>
             </nav>
@@ -799,8 +1147,12 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>BORN TO PLAY</h1>
-                <p>Premium Motors offers the finest selection of luxury vehicles with exceptional service and competitive pricing. Find your perfect match from our extensive inventory.</p>
+                <div class="hero-title">
+        <img src="image/WHITE@4x.png" alt="Born To Play" class="hero-title-img">
+    </div>
+
+                <br>
+                
                 <div class="hero-btns">
                     <a href="#inventory" class="btn btn-primary">Browse Inventory</a>
                     <a href="#contact" class="btn btn-secondary">Schedule Test Drive</a>
@@ -814,128 +1166,252 @@
         <div class="container">
             <div class="section-title">
                 <h2>Featured Vehicles</h2>
-                <p>Explore our hand-picked selection of premium vehicles that combine performance, luxury, and value.</p>
+                <p>Explore our premium vehicles that combine performance, luxury, and value.</p>
             </div>
             
-            <div class="car-filters">
-                <button class="filter-btn active">All Brands</button>
-                <button class="filter-btn">Luxury</button>
-                <button class="filter-btn">SUV</button>
-                <button class="filter-btn">Sports</button>
-                <button class="filter-btn">Electric</button>
-            </div>
+            
             
             <div class="cars-grid">
                 <!-- Car 1 -->
                 <div class="car-card">
-                    <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=975&q=80');">
-                        <span class="car-badge">New Arrival</span>
+                    <div class="car-img" style="background-image: url('image/icar03main.png');">
+                        <span class="car-badge">EV SUV</span>
                     </div>
                     <div class="car-info">
                         <div class="car-title">
-                            <h3>Mercedes-Benz S-Class</h3>
-                            <div class="car-price">$105,900</div>
+                            <h3>iCaur 03</h3>
+                            <div class="car-price"></div>
                         </div>
-                        <p>The pinnacle of luxury with cutting-edge technology and unparalleled comfort.</p>
+                        
                         <div class="car-specs">
                             <div class="spec">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>3.5s 0-60mph</span>
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>184 PS (135 kW) 220 Nm</span>
                             </div>
                             <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>Hybrid</span>
+                                <i class="fa-solid fa-battery-full"></i>
+                                <span>50.6–69.8 kWh</span>
                             </div>
                             <div class="spec">
                                 <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
+                                <span>Electric</span>
                             </div>
                             <div class="spec">
                                 <i class="fas fa-road"></i>
-                                <span>12,500 miles</span>
+                                <span>max range ~501 km</span>
                             </div>
                         </div>
                         <div class="car-actions">
-                            <a href="#" class="btn btn-secondary">Details</a>
-                            <a href="#" class="btn btn-primary">Inquire</a>
+                            <a href="#carousel" class="btn btn-3rd">Details</a>
+                            <a href="#contact" class="btn btn-primary">Inquire</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Car 2 -->
                 <div class="car-card">
-                    <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
-                        <span class="car-badge">Low Mileage</span>
+                    <div class="car-img" style="background-image: url('image/icar03tmain.png');">
+                        <span class="car-badge">Rugged Sport</span>
                     </div>
                     <div class="car-info">
                         <div class="car-title">
-                            <h3>Porsche 911 Turbo</h3>
-                            <div class="car-price">$165,500</div>
+                            <h3>iCaur 03T</h3>
+                            <div class="car-price"></div>
                         </div>
-                        <p>Iconic sports car with blistering performance and timeless design.</p>
+                        <p></p>
                         <div class="car-specs">
                             <div class="spec">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>2.8s 0-60mph</span>
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>184 PS (135 kW) 220 Nm</span>
                             </div>
                             <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>Premium</span>
+                                <i class="fa-solid fa-battery-full"></i>
+                                <span>50.6–69.8 kWh</span>
                             </div>
                             <div class="spec">
                                 <i class="fas fa-cogs"></i>
-                                <span>PDK Automatic</span>
+                                <span>Electric</span>
                             </div>
                             <div class="spec">
                                 <i class="fas fa-road"></i>
-                                <span>8,200 miles</span>
+                                <span>max range ~501 km</span>
                             </div>
                         </div>
                         <div class="car-actions">
-                            <a href="#" class="btn btn-secondary">Details</a>
-                            <a href="#" class="btn btn-primary">Inquire</a>
+                            <a href="#carousel" class="btn btn-3rd">Details</a>
+                            <a href="#contact" class="btn btn-primary">Inquire</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Car 3 -->
                 <div class="car-card">
-                    <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
-                        <span class="car-badge">Certified</span>
+                    <div class="car-img" style="background-image: url('image/v23main.png');">
+                        <span class="car-badge">EV SUV</span>
                     </div>
                     <div class="car-info">
                         <div class="car-title">
-                            <h3>Range Rover Velar</h3>
-                            <div class="car-price">$72,800</div>
+                            <h3>iCaur V23</h3>
+                            <div class="car-price"></div>
                         </div>
-                        <p>Sophisticated SUV with commanding presence and premium craftsmanship.</p>
+                        
                         <div class="car-specs">
                             <div class="spec">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>5.3s 0-60mph</span>
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>134 hp (100 kW) 180 Nm</span>
                             </div>
                             <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>Diesel</span>
+                                <i class="fa-solid fa-battery-full"></i>
+                                <span>59.9 kWh LFP</span>
                             </div>
                             <div class="spec">
                                 <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
+                                <span>Electric</span>
                             </div>
                             <div class="spec">
                                 <i class="fas fa-road"></i>
-                                <span>18,300 miles</span>
+                                <span>max range ~550 km</span>
                             </div>
                         </div>
                         <div class="car-actions">
-                            <a href="#" class="btn btn-secondary">Details</a>
-                            <a href="#" class="btn btn-primary">Inquire</a>
+                            <a href="#carousel" class="btn btn-3rd">Details</a>
+                            <a href="#contact" class="btn btn-primary">Inquire</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- carousel -->
+
+    <div class="carousel" id="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="image/icar03-1.png">
+                <div class="content">
+                    <div class="author"></div>
+                    <div class="title"> <img src="image/iCAUR-LOGO-BLACK.png" alt="Born To Play" class="hero-title-img"></div><br>
+                    <div class="topic"><img src="03/03_black.png" alt="Born To Play" class="hero-title-img"></div><br>
+                    <div class="des des-black">
+                        <!-- lorem 50 -->
+                       A modern compact electric SUV designed for urban <br> commuters, offering up to 501 km of range with advanced tech<br> and comfort features.
+                    </div>
+                    <div class="buttons">
+                        <button onclick="downloadPDF('iCAUR 03_ FLYER_FAOL.pdf')">SEE MORE</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/icar03-2.png">
+                <div class="content">
+                    <div class="author"></div>
+                    <div class="title">
+        <img src="image/iCAUR-LOGO-BLACK.png" alt="Born To Play" class="hero-title-img">
+    </div><br>
+                    <div class="topic"><img src="03T/03T_black.png" alt="Born To Play" class="hero-title-img"></div>
+                    <div class="des des-black">A sportier version of the 03 with bold<br> off-road styling and the same capable EV <br>powertrain options for adventurous city drivers.
+                          </div>
+                    <div class="buttons" >
+                        <button onclick="downloadPDF('iCAUR 03T_FLYER.pdf')">SEE MORE</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/icar03-3.png">
+                <div class="content">
+                    <div class="author"></div>
+                    <div class="title">
+        <img src="image/iCAUR-LOGO-WHITE.png" alt="Born To Play" class="hero-title-img">
+    </div> <br>
+                    <div class="topic"><img src="V23/V23_black.png" alt="Born To Play" class="hero-title-img"></div><br>
+                    <div class="des">A retro-styled, boxy electric SUV built for outdoor enthusiasts, combining off-road capability with up to 550 km range and quirky charm.
+                         </div>
+                    <div class="buttons">
+                        <button onclick="downloadPDF('iCAUR V23_ FLYER_FAOL.pdf')">SEE MORE</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/icar03-4.jpg">
+                <div class="content">
+                    <div class="author"></div>
+                   <div class="title">
+        <img src="image/iCAUR-LOGO-WHITE.png" alt="Born To Play" class="hero-title-img">
+    </div>
+                    <div class="topic"><img src="image/Infinity_Audio_Logo.png" alt="Born To Play" class="hero-title-img"></div>
+                    <div class="des">
+                         Take advanced Infinity technology with you everywhere.<br> With our selection of auto components, you can<br> custom-create a superior sound system that travels beautifully.
+                    </div>
+                    <div class="buttons">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="image/icar03-1.png">
+                <div class="content">
+                    <div class="title">
+                        iCaur 03
+                    </div>
+                    <div class="description">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/icar03-2.png">
+                <div class="content">
+                    <div class="title">
+                        iCaur 03T
+                    </div>
+                    <div class="description">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/icar03-3.png">
+                <div class="content">
+                    <div class="title">
+                        iCaur V23
+                    </div>
+                    <div class="description">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/icar03-4.jpg">
+                <div class="content">
+                    <div class="title">
+                        Infinity Sound System
+                    </div>
+                    <div class="description">
+                        HARMAN Audio
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+    </div>
+    
+    <script src="app.js"></script>
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -1057,7 +1533,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Our Location</h3>
-                            <p>123 Luxury Avenue, Beverly Hills, CA 90210</p>
+                            <p> Level 2, Pavilion, 2, Persiaran Jalil 8, Bukit Jalil,<br> 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
                         </div>
                     </div>
                     
@@ -1067,19 +1543,11 @@
                         </div>
                         <div class="contact-details">
                             <h3>Phone Number</h3>
-                            <p>(888) 555-1234</p>
+                            <p>+60 12-206 6333</p>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email Address</h3>
-                            <p>info@premiummotors.com</p>
-                        </div>
-                    </div>
+                   
                     
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1087,7 +1555,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Working Hours</h3>
-                            <p>Monday - Friday: 9:00 AM - 8:00 PM<br>Saturday: 10:00 AM - 6:00 PM<br>Sunday: Closed</p>
+                            <p>Monday - Friday: 11:00 AM - 7:00 PM<br>Saturday & Sunday: 10:30 AM - 7:30 PM</p>
                         </div>
                     </div>
                 </div>
@@ -1096,32 +1564,32 @@
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="John Smith">
+                            <input type="text" id="name" placeholder="John Smith" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="john@example.com">
+                            <input type="email" id="email" placeholder="john@example.com" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="(123) 456-7890">
+                            <input type="tel" id="phone" placeholder="(+60) 12-345 6789" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="interest">Vehicle Interest</label>
                             <select id="interest">
                                 <option value="">Select a vehicle</option>
-                                <option value="mercedes">Mercedes-Benz S-Class</option>
-                                <option value="porsche">Porsche 911 Turbo</option>
-                                <option value="rangerover">Range Rover Velar</option>
-                                <option value="other">Other Models</option>
+                                <option value="03">iCaur 03</option>
+                                <option value="03T">iCaur 03T</option>
+                                <option value="V23">iCaur V23</option>
+                                
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Your Message</label>
+                            <label for="message">Your Message (optional)</label>
                             <textarea id="message" placeholder="I'm interested in learning more about..."></textarea>
                         </div>
                         
@@ -1137,8 +1605,8 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>Premium Motors</h3>
-                    <p>Your trusted partner for luxury vehicles since 2005. We pride ourselves on exceptional service and an unparalleled selection of premium automobiles.</p>
+                    <h3>iCAUR Bukit Jalil - <br>Rover Drive Kuala Lumpur</h3>
+                    <p>Your trusted partner for luxury vehicles. We pride ourselves on exceptional service and an unparalleled selection of <br>premium EV.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1159,14 +1627,12 @@
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Brands We Carry</h3>
+                    <h3>Featured Cars</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Mercedes-Benz</a></li>
-                        <li><a href="#">BMW</a></li>
-                        <li><a href="#">Porsche</a></li>
-                        <li><a href="#">Audi</a></li>
-                        <li><a href="#">Land Rover</a></li>
-                        <li><a href="#">Tesla</a></li>
+                        <li><a href="#carousel">ICAUR 03</a></li>
+                        <li><a href="#carousel">ICAUR 03T</a></li>
+                        <li><a href="#carousel">ICAUR V23</a></li>
+                        
                     </ul>
                 </div>
                 
@@ -1175,15 +1641,16 @@
                     <p>Subscribe to receive updates on new arrivals, special offers, and events.</p>
                     <form>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email Address">
+                            <input type="email" id="newsletterEmail" placeholder="Your Email Address">
                         </div>
                         <button type="submit" class="btn btn-primary">Subscribe</button>
+                        
                     </form>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Premium Motors. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color:var(--secondary);"></i> for Car Enthusiasts</p>
+                <p>&copy; 2025 iCAUR Bukit Jalil - Rover Drive. All Rights Reserved. | Designed by StrengthMedia Malaysia <i class="fas fa-heart" style="color:var(--secondary);"></i></p>
             </div>
         </div>
     </footer>
@@ -1331,7 +1798,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 </script>
+<script>
+  document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent scrolling or refreshing
 
+    const email = document.getElementById("newsletterEmail").value;
+
+    fetch("https://script.google.com/macros/s/AKfycbzCKlM6kOKDCC16ZhuqRHL5reLOQsBw-0DGOpcgzhX-9CurJ2NPVidzRkzhjLunVkVr9g/exec", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    })
+    .then(response => {
+      alert("Subscribed successfully!");
+      document.getElementById("newsletterForm").reset();
+    })
+    .catch(error => {
+      console.error("Error!", error.message);
+      alert("Subscription failed. Please try again later.");
+    });
+  });
+</script>
+<script>
+  function downloadPDF(fileName) {
+    const link = document.createElement('a');
+    link.href = fileName;
+    link.download = fileName;
+    link.click();
+  }
+</script>
 </body>
 </html>
-
