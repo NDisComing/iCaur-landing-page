@@ -504,7 +504,8 @@
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
+             gap: 50px;
+            align-items: start; /* keeps icons aligned from the top */
         }
 
         .contact-info {
@@ -515,19 +516,21 @@
 
         .contact-item {
             display: flex;
-            gap: 15px;
+    align-items: flex-start; /* icon stays at top */
+    gap: 15px;
         }
 
         .contact-icon {
             width: 50px;
             height: 50px;
             background: var(--primary);
-            border-radius: 50%;
+            border-radius: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            flex-shrink: 0; /* stops icon from shrinking */
         }
 
         .contact-details h3 {
@@ -835,17 +838,34 @@
     gap: 5px;
     margin-top: 20px;
 }
+
+.buttons{
+    position: relative; /* lets you adjust if needed */
+    top: -40px;   /* optional: move upward */
+ }
+
 .carousel .list .item .buttons button{
     border: none;
-    background-color: #eee;
+    background-color: #bebebeb8;
     letter-spacing: 3px;
-    font-family: ;
+   
     font-weight: 500;
 }
+.buttons button{
+    position: relative; /* lets you adjust if needed */
+    top: -40px;   /* optional: move upward */
+    
+}
+
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
     border: 1px solid #fff;
     color: #eee;
+}
+.buttons button:nth-child(2){
+    position: relative; /* lets you adjust if needed */
+    top: -40px;   /* optional: move upward */
+    
 }
 /* thumbail */
 .thumbnail{
@@ -920,6 +940,9 @@
     /* Align left with text */
     margin-left: 0; 
     margin-right: auto; 
+    position: relative; /* allows top/left to work */
+    top: -70px;   /* move upward */
+    
 }
 
 .topic{
@@ -930,8 +953,11 @@
     max-width: 100%; /* responsive */
     
     /* Align left with text */
-    margin-left: 0; 
+    margin-left: 010px; 
     margin-right: auto; 
+    position: relative; /* allows top/left to work */
+    top: -70px;   /* move upward */
+    
 }
 
 
@@ -1294,7 +1320,7 @@
                     <div class="topic"><img src="03/03_black.png" alt="Born To Play" class="hero-title-img"></div><br>
                     <div class="des des-black">
                         <!-- lorem 50 -->
-                       A modern compact electric SUV designed for urban <br> commuters, offering up to 501 km of range with advanced tech<br> and comfort features.
+                       
                     </div>
                     <div class="buttons">
                         <button onclick="downloadPDF('iCAUR 03_ FLYER_FAOL.pdf')">SEE MORE</button>
@@ -1310,8 +1336,8 @@
         <img src="image/iCAUR-LOGO-BLACK.png" alt="Born To Play" class="hero-title-img">
     </div><br>
                     <div class="topic"><img src="03T/03T_black.png" alt="Born To Play" class="hero-title-img"></div>
-                    <div class="des des-black">A sportier version of the 03 with bold<br> off-road styling and the same capable EV <br>powertrain options for adventurous city drivers.
-                          </div>
+                    <div class="des des-black">
+                          </div><br>
                     <div class="buttons" >
                         <button onclick="downloadPDF('iCAUR 03T_FLYER.pdf')">SEE MORE</button>
                         
@@ -1326,8 +1352,7 @@
         <img src="image/iCAUR-LOGO-WHITE.png" alt="Born To Play" class="hero-title-img">
     </div> <br>
                     <div class="topic"><img src="V23/V23_black.png" alt="Born To Play" class="hero-title-img"></div><br>
-                    <div class="des">A retro-styled, boxy electric SUV built for outdoor enthusiasts, combining off-road capability with up to 550 km range and quirky charm.
-                         </div>
+                    <div class="des"></div>
                     <div class="buttons">
                         <button onclick="downloadPDF('iCAUR V23_ FLYER_FAOL.pdf')">SEE MORE</button>
                         
@@ -1343,8 +1368,7 @@
     </div>
                     <div class="topic"><img src="image/Infinity_Audio_Logo.png" alt="Born To Play" class="hero-title-img"></div>
                     <div class="des">
-                         Take advanced Infinity technology with you everywhere.<br> With our selection of auto components, you can<br> custom-create a superior sound system that travels beautifully.
-                    </div>
+                         </div>
                     <div class="buttons">
                         
                     </div>
@@ -1527,7 +1551,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fa fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Our Location</h3>
@@ -1537,7 +1561,7 @@
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Phone Number</h3>
@@ -1606,10 +1630,10 @@
                     <h3>iCAUR Bukit Jalil - <br>Rover Drive Sdn Bhd</h3>
                     <p>Your trusted partner for luxury vehicles. We pride ourselves on exceptional service and an unparalleled selection of <br>premium EV.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61576941476267"><i class="fab fa-facebook-f"></i></a>
+                        
+                        <a href="https://www.instagram.com/icaur.bukitjalil"><i class="fab fa-instagram"></i></a>
+                        
                     </div>
                 </div>
                 
