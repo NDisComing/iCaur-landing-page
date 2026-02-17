@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iCaur Bukit Jalil</title>
     <link rel="icon" type="image/png" href="iCaur icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
     <style>
         /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             scroll-behavior: smooth;
         }
 
         :root {
-            --primary: rgba(4,2,3);
+            --font-heading: 'Rajdhani', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --primary: rgba(4, 2, 3);
             --secondary: #f37021;
             --accent: #237BB5;
             --light: #f8f9fa;
@@ -28,6 +35,7 @@
         body {
             background-color: var(--light);
             color: var(--dark);
+            font-family: var(--font-body);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -42,23 +50,24 @@
         .icaurlogo {
 
 
-    width:200px;
-    height:40px;
-    display: inline-block;
-    margin:10px;
-}
+            width: 200px;
+            height: 40px;
+            display: inline-block;
+            margin: 10px;
+        }
 
         .btn {
             display: inline-block;
             padding: 12px 28px;
             border-radius: 30px;
+            font-family: var(--font-heading);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         .btn-primary {
@@ -105,11 +114,13 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 3rem;
             color: var(--primary);
             margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .section-title p {
@@ -132,7 +143,7 @@
 
         /* Header Styles */
         header {
-            background-color: rgba(4,2,3,0.7);
+            background-color: rgba(4, 2, 3, 0.7);
             padding: 15px 0;
             position: fixed;
             width: 100%;
@@ -143,7 +154,7 @@
         }
 
         header:hover {
-            background-color: rgba(4,2,3,1);
+            background-color: rgba(4, 2, 3, 1);
         }
 
         .header-container {
@@ -164,8 +175,12 @@
         }
 
         .logo h1 {
+            font-family: var(--font-heading);
+            font-weight: 700;
             color: white;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .logo span {
@@ -182,13 +197,16 @@
         }
 
         nav ul li a {
+            font-family: var(--font-heading);
             color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
-            font-size: 1rem;
+            font-size: 1.1rem;
             position: relative;
             padding: 5px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         nav ul li a:hover {
@@ -234,9 +252,13 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 4.5rem;
             margin-bottom: 20px;
-            line-height: 1.2;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .hero-content p {
@@ -251,19 +273,24 @@
         }
 
         .hero-title {
-    text-align: center; /* centers it horizontally */
-    margin-bottom: 20px; /* space below if needed */
-}
+            text-align: center;
+            /* centers it horizontally */
+            margin-bottom: 20px;
+            /* space below if needed */
+        }
 
-.hero-title-img {
-    display: block; /* so it behaves like text (block element) */
-    width: 400px; /* adjust as needed */
-    max-width: 100%; /* responsive */
-    
-    /* Align left with text */
-    margin-left: 0; 
-    margin-right: auto; 
-}
+        .hero-title-img {
+            display: block;
+            /* so it behaves like text (block element) */
+            width: 400px;
+            /* adjust as needed */
+            max-width: 100%;
+            /* responsive */
+
+            /* Align left with text */
+            margin-left: 0;
+            margin-right: auto;
+        }
 
         /* Featured Cars */
         .car-filters {
@@ -281,10 +308,14 @@
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn:hover,
+        .filter-btn.active {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
@@ -292,29 +323,48 @@
 
         .cars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .car-card {
-            background: white;
-            border-radius: 10px;
+            background: #0b0d0f;
+            /* Slightly darker for premium feel */
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid #1a1a1a;
+            position: relative;
         }
 
         .car-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent);
+            /* Subtle glow */
         }
 
         .car-img {
-            height: 200px;
+            height: 350px;
+            /* Taller image for impact */
             width: 100%;
             background-size: cover;
             background-position: center;
             position: relative;
+        }
+
+        /* Ensure responsive fallback */
+        @media (max-width: 768px) {
+            .cars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .car-img {
+                height: 250px;
+            }
         }
 
         .car-badge {
@@ -325,8 +375,11 @@
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
             font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .car-info {
@@ -338,17 +391,22 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
+            font-family: var(--font-heading);
         }
 
         .car-title h3 {
-            font-size: 1.4rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.8rem;
             color: var(--primary);
+            text-transform: uppercase;
         }
 
         .car-price {
+            font-family: var(--font-heading);
             color: var(--secondary);
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
 
         .car-specs {
@@ -375,13 +433,14 @@
         .car-actions {
             display: flex;
             justify-content: space-between;
-    width: 100%;
-    gap: 10px; /* space between buttons */
+            width: 100%;
+            gap: 10px;
+            /* space between buttons */
         }
 
         /* Services Section */
         .services {
-            background: rgba(4,2,3);
+            background: rgba(4, 2, 3);
             color: white;
         }
 
@@ -419,8 +478,11 @@
         }
 
         .service-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
             font-size: 1.5rem;
             margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
         /* Testimonials */
@@ -445,8 +507,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .client-img {
@@ -472,9 +539,12 @@
         }
 
         .client-name {
+            font-family: var(--font-heading);
             font-weight: 700;
             color: var(--primary);
             font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .client-position {
@@ -506,8 +576,9 @@
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-             gap: 50px;
-            align-items: start; /* keeps icons aligned from the top */
+            gap: 50px;
+            align-items: start;
+            /* keeps icons aligned from the top */
         }
 
         .contact-info {
@@ -518,8 +589,9 @@
 
         .contact-item {
             display: flex;
-    align-items: flex-start; /* icon stays at top */
-    gap: 15px;
+            align-items: flex-start;
+            /* icon stays at top */
+            gap: 15px;
         }
 
         .contact-icon {
@@ -532,13 +604,17 @@
             justify-content: center;
             color: white;
             font-size: 1.5rem;
-            flex-shrink: 0; /* stops icon from shrinking */
+            flex-shrink: 0;
+            /* stops icon from shrinking */
         }
 
         .contact-details h3 {
+            font-family: var(--font-heading);
             font-size: 1.2rem;
             margin-bottom: 5px;
             color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .contact-form {
@@ -546,6 +622,44 @@
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .location-block {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .location-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .location-title {
+            font-family: var(--font-heading);
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .location-subtitle {
+            display: block;
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: normal;
+            margin-top: 5px;
+        }
+
+        .contact-important {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
         }
 
         .form-group {
@@ -584,7 +698,7 @@
 
         /* Footer */
         footer {
-            background: rgba(4,2,3);
+            background: rgba(4, 2, 3);
             color: rgba(255, 255, 255, 0.7);
             padding: 60px 0 30px;
         }
@@ -597,11 +711,15 @@
         }
 
         .footer-col h3 {
+            font-family: var(--font-heading);
             color: white;
             font-size: 1.3rem;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .footer-col h3::after {
@@ -668,7 +786,7 @@
             .hero-content h1 {
                 font-size: 2.8rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2.2rem;
             }
@@ -678,7 +796,7 @@
             .mobile-toggle {
                 display: block;
             }
-            
+
             nav {
                 position: fixed;
                 top: 70px;
@@ -689,28 +807,28 @@
                 transition: left 0.3s ease;
                 padding: 30px;
             }
-            
+
             nav.active {
                 left: 0;
             }
-            
+
             nav ul {
                 flex-direction: column;
             }
-            
+
             nav ul li {
                 margin: 15px 0;
             }
-            
+
             .hero-content h1 {
                 font-size: 2.3rem;
             }
-            
+
             .hero-btns {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .btn {
                 width: 100%;
                 text-align: center;
@@ -721,429 +839,904 @@
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
+
             .hero-content h1 {
                 font-size: 2rem;
             }
-            
+
             .hero-content p {
                 font-size: 1rem;
             }
         }
+
         #scrollToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 10000;
-  background-color: rgba(4,2,3);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 28px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(4, 14, 19, 0.6);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10000;
+            background-color: rgba(4, 2, 3);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(4, 14, 19, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
 
-#scrollToTopBtn:hover,
-#scrollToTopBtn:focus {
-  background-color: #0d0f11;
-  outline: none;
-}
+        #scrollToTopBtn:hover,
+        #scrollToTopBtn:focus {
+            background-color: #0d0f11;
+            outline: none;
+        }
 
-#scrollToTopBtn.show {
-  opacity: 1;
-  visibility: visible;
-}
+        #scrollToTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+        }
 
-#whatsappBtn {
-  position: fixed;
-  bottom: 90px; /* 30px (scroll btn bottom) + 48px (scroll btn height) + 12px margin */
-  right: 30px;
-  background-color: #25d366;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  z-index: 10000;
-}
+        #whatsappBtn {
+            position: fixed;
+            bottom: 90px;
+            /* 30px (scroll btn bottom) + 48px (scroll btn height) + 12px margin */
+            right: 30px;
+            background-color: #25d366;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 10000;
+        }
 
-#whatsappBtn:hover,
-#whatsappBtn:focus {
-  background-color: #1ebe5d;
-  outline: none;
-}
+        #whatsappBtn:hover,
+        #whatsappBtn:focus {
+            background-color: #1ebe5d;
+            outline: none;
+        }
 
-#whatsappBtn svg {
-  pointer-events: none;
-  user-select: none;
-  display: block;
-}
+        #whatsappBtn svg {
+            pointer-events: none;
+            user-select: none;
+            display: block;
+        }
 
-    /* carousel */
-.carousel{
-    height: 100vh;
-    margin-top: -50px;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-}
-.carousel .list .item{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0 0 0 0;
-}
-.carousel .list .item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.carousel .list .item .content{
-    position: absolute;
-    top: 20%;
-    width: 1140px;
-    max-width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-right: 30%;
-    box-sizing: border-box;
-    color: #fff;
-    text-shadow: 0 5px 10px #0004;
-}
-.carousel .list .item .author{
-    font-weight: bold;
-    letter-spacing: 10px;
-}
-.carousel .list .item .title,
-.carousel .list .item .topic{
-    font-size: 5em;
-    font-weight: bold;
-    line-height: 1.3em;
-}
-.carousel .list .item .topic{
-    color: #f1683a;
-}
-.carousel .list .item .buttons{
-    display: grid;
-    grid-template-columns: repeat(2, 130px);
-    grid-template-rows: 40px;
-    gap: 5px;
-    margin-top: 20px;
-}
+        /* carousel */
+        .carousel {
+            height: 100vh;
+            margin-top: -50px;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
 
-.buttons{
-    position: relative; /* lets you adjust if needed */
-    top: -40px;   /* optional: move upward */
- }
+        .carousel .list .item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0 0 0 0;
+        }
 
-.carousel .list .item .buttons button{
-    border: none;
-    background-color: #bebebeb8;
-    letter-spacing: 3px;
-   
-    font-weight: 500;
-}
-.buttons button{
-    position: relative; /* lets you adjust if needed */
-    top: -40px;   /* optional: move upward */
-    
-}
+        .carousel .list .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.carousel .list .item .buttons button:nth-child(2){
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #eee;
-}
-.buttons button:nth-child(2){
-    position: relative; /* lets you adjust if needed */
-    top: -40px;   /* optional: move upward */
-    
-}
-/* thumbail */
-.thumbnail{
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    width: max-content;
-    z-index: 100;
-    display: flex;
-    gap: 20px;
-}
-.thumbnail .item{
-    width: 150px;
-    height: 220px;
-    flex-shrink: 0;
-    position: relative;
-}
-.thumbnail .item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.thumbnail .item .content{
-    color: #fff;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-}
-.thumbnail .item .content .title{
-    font-weight: 500;
-}
-.thumbnail .item .content .description{
-    font-weight: 300;
-}
-/* arrows */
-.arrows{
-    position: absolute;
-    top: 80%;
-    right: 52%;
-    z-index: 100;
-    width: 300px;
-    max-width: 30%;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-.arrows button{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #f1683a;
-    border: none;
-    color: #fff;
-    font-family: monospace;
-    font-weight: bold;
-    transition: .5s;
-}
-.arrows button:hover{
-    background-color: #fff;
-    color: #000;
-}
+        .carousel .list .item .content {
+            position: absolute;
+            top: 20%;
+            width: 1140px;
+            max-width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-right: 30%;
+            box-sizing: border-box;
+            color: #fff;
+            text-shadow: 0 5px 10px #0004;
+        }
 
-.title{
+        .carousel .list .item .author {
+            font-family: var(--font-heading);
+            font-weight: bold;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
 
-    
-    display: block; /* so it behaves like text (block element) */
-    width: 200px; /* adjust as needed */
-    max-width: 100%; /* responsive */
-    
-    /* Align left with text */
-    margin-left: 0; 
-    margin-right: auto; 
-    position: relative; /* allows top/left to work */
-    top: -70px;   /* move upward */
-    
-}
+        .carousel .list .item .title,
+        .carousel .list .item .topic {
+            font-family: var(--font-heading);
+            font-size: 5em;
+            font-weight: bold;
+            line-height: 1.3em;
+            text-transform: uppercase;
+        }
 
-.topic{
+        .carousel .list .item .topic {
+            color: #f1683a;
+        }
 
-    
-    display: block; /* so it behaves like text (block element) */
-    width: 300px; /* adjust as needed */
-    max-width: 100%; /* responsive */
-    
-    /* Align left with text */
-    margin-left: 00px; 
-    margin-right: auto; 
-    position: relative; /* allows top/left to work */
-    top: -70px;   /* move upward */
-    
-}
+        .carousel .list .item .buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 130px);
+            grid-template-rows: 40px;
+            gap: 5px;
+            margin-top: 20px;
+        }
 
+        .buttons {
+            position: relative;
+            /* lets you adjust if needed */
+            top: -40px;
+            /* optional: move upward */
+        }
 
-@keyframes fadeInCustom {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        .carousel .list .item .buttons button {
+            border: none;
+            background-color: #bebebeb8;
+            letter-spacing: 3px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
 
-/* animation */
-.carousel .list .item:nth-child(1){
-    z-index: 1;
-}
+        .buttons button {
+            position: relative;
+            /* lets you adjust if needed */
+            top: -40px;
+            /* optional: move upward */
 
-/* animation text in first item */
+        }
 
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons
-{
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
-}
-@keyframes showContent{
-    to{
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-.carousel .list .item:nth-child(1) .content .title{
-    animation-delay: 1.2s!important;
-}
-.carousel .list .item:nth-child(1) .content .topic{
-    animation-delay: 1.4s!important;
-}
-.carousel .list .item:nth-child(1) .content .des{
-    animation-delay: 1.6s!important;
-}
-.carousel .list .item:nth-child(1) .content .buttons{
-    animation-delay: 1.8s!important;
-}
+        .carousel .list .item .buttons button:nth-child(2) {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #eee;
+        }
 
-.des-black{
-    color: #000;
-    font-weight: 500;
-    font-size: 1em;
-    margin-top: 10px;
-}
-/* create animation when next click */
-.carousel.next .list .item:nth-child(1) img:not(.title img):not(.topic img) {
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
-}
-@keyframes showImage{
-    to{
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-}
+        .buttons button:nth-child(2) {
+            position: relative;
+            /* lets you adjust if needed */
+            top: -40px;
+            /* optional: move upward */
 
-.carousel.next .thumbnail .item:nth-last-child(1){
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.carousel.prev .list .item img{
-    z-index: 100;
-}
-@keyframes showThumbnail{
-    from{
-        width: 0;
-        opacity: 0;
-    }
-}
-.carousel.next .thumbnail{
-    animation: effectNext .5s linear 1 forwards;
-}
+        }
 
-@keyframes effectNext{
-    from{
-        transform: translateX(150px);
-    }
-}
+        /* thumbail */
+        .thumbnail {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            width: max-content;
+            z-index: 100;
+            display: flex;
+            gap: 20px;
+        }
 
-/* running time */
+        .thumbnail .item {
+            width: 150px;
+            height: 220px;
+            flex-shrink: 0;
+            position: relative;
+        }
 
-.carousel .time{
-    position: absolute;
-    z-index: 1000;
-    width: 0%;
-    height: 3px;
-    background-color: #f1683a;
-    left: 0;
-    top: 0;
-}
+        .thumbnail .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
 
-.carousel.next .time,
-.carousel.prev .time{
-    animation: runningTime 3s linear 1 forwards;
-}
-@keyframes runningTime{
-    from{ width: 100%}
-    to{width: 0}
-}
+        .thumbnail .item .content {
+            color: #fff;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+        }
+
+        .thumbnail .item .content .title {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .thumbnail .item .content .description {
+            font-weight: 300;
+        }
+
+        /* arrows */
+        .arrows {
+            position: absolute;
+            top: 80%;
+            right: 52%;
+            z-index: 100;
+            width: 300px;
+            max-width: 30%;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .arrows button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f1683a;
+            border: none;
+            color: #fff;
+            font-family: var(--font-heading);
+            font-weight: bold;
+            transition: .5s;
+        }
+
+        .arrows button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .title {
 
 
-/* prev click */
+            display: block;
+            /* so it behaves like text (block element) */
+            width: 200px;
+            /* adjust as needed */
+            max-width: 100%;
+            /* responsive */
 
-.carousel.prev .list .item:nth-child(2){
-    z-index: 2;
-}
+            /* Align left with text */
+            margin-left: 0;
+            margin-right: auto;
+            position: relative;
+            /* allows top/left to work */
+            top: -70px;
+            /* move upward */
 
-.carousel.prev .list .item:nth-child(2) img{
-    animation: outFrame 0.5s linear 1 forwards;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-@keyframes outFrame{
-    to{
-        width: 150px;
-        height: 220px;
-        bottom: 50px;
-        left: 50%;
-        border-radius: 20px;
-    }
-}
+        }
 
-.carousel.prev .thumbnail .item:nth-child(1){
-    overflow: hidden;
-    opacity: 0;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.carousel.next .arrows button,
-.carousel.prev .arrows button{
-    pointer-events: none;
-}
-.carousel.prev .list .item:nth-child(2) .content .author,
-.carousel.prev .list .item:nth-child(2) .content .title,
-.carousel.prev .list .item:nth-child(2) .content .topic,
-.carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons
-{
-    animation: contentOut 1.5s linear 1 forwards!important;
-}
+        .topic {
 
-@keyframes contentOut{
-    to{
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
-}
-@media screen and (max-width: 678px) {
-    .carousel .list .item .content{
-        padding-right: 0;
-    }
-    .carousel .list .item .content .title{
-        font-size: 30px;
-    }
-}
+
+            display: block;
+            /* so it behaves like text (block element) */
+            width: 300px;
+            /* adjust as needed */
+            max-width: 100%;
+            /* responsive */
+
+            /* Align left with text */
+            margin-left: 00px;
+            margin-right: auto;
+            position: relative;
+            /* allows top/left to work */
+            top: -70px;
+            /* move upward */
+
+        }
+
+
+        @keyframes fadeInCustom {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* animation */
+        .carousel .list .item:nth-child(1) {
+            z-index: 1;
+        }
+
+        /* animation text in first item */
+
+        .carousel .list .item:nth-child(1) .content .author,
+        .carousel .list .item:nth-child(1) .content .title,
+        .carousel .list .item:nth-child(1) .content .topic,
+        .carousel .list .item:nth-child(1) .content .des,
+        .carousel .list .item:nth-child(1) .content .buttons {
+            transform: translateY(50px);
+            filter: blur(20px);
+            opacity: 0;
+            animation: showContent .5s 1s linear 1 forwards;
+        }
+
+        @keyframes showContent {
+            to {
+                transform: translateY(0px);
+                filter: blur(0px);
+                opacity: 1;
+            }
+        }
+
+        .carousel .list .item:nth-child(1) .content .title {
+            animation-delay: 1.2s !important;
+        }
+
+        .carousel .list .item:nth-child(1) .content .topic {
+            animation-delay: 1.4s !important;
+        }
+
+        .carousel .list .item:nth-child(1) .content .des {
+            animation-delay: 1.6s !important;
+        }
+
+        .carousel .list .item:nth-child(1) .content .buttons {
+            animation-delay: 1.8s !important;
+        }
+
+        .des-black {
+            color: #000;
+            font-weight: 500;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        /* create animation when next click */
+        .carousel.next .list .item:nth-child(1) img:not(.title img):not(.topic img) {
+            width: 150px;
+            height: 220px;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            border-radius: 30px;
+            animation: showImage .5s linear 1 forwards;
+        }
+
+        @keyframes showImage {
+            to {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+        }
+
+        .carousel.next .thumbnail .item:nth-last-child(1) {
+            overflow: hidden;
+            animation: showThumbnail .5s linear 1 forwards;
+        }
+
+        .carousel.prev .list .item img {
+            z-index: 100;
+        }
+
+        @keyframes showThumbnail {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+        }
+
+        .carousel.next .thumbnail {
+            animation: effectNext .5s linear 1 forwards;
+        }
+
+        @keyframes effectNext {
+            from {
+                transform: translateX(150px);
+            }
+        }
+
+        /* running time */
+
+        .carousel .time {
+            position: absolute;
+            z-index: 1000;
+            width: 0%;
+            height: 3px;
+            background-color: #f1683a;
+            left: 0;
+            top: 0;
+        }
+
+        .carousel.next .time,
+        .carousel.prev .time {
+            animation: runningTime 3s linear 1 forwards;
+        }
+
+        @keyframes runningTime {
+            from {
+                width: 100%
+            }
+
+            to {
+                width: 0
+            }
+        }
+
+
+        /* prev click */
+
+        .carousel.prev .list .item:nth-child(2) {
+            z-index: 2;
+        }
+
+        .carousel.prev .list .item:nth-child(2) img {
+            animation: outFrame 0.5s linear 1 forwards;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        @keyframes outFrame {
+            to {
+                width: 150px;
+                height: 220px;
+                bottom: 50px;
+                left: 50%;
+                border-radius: 20px;
+            }
+        }
+
+        .carousel.prev .thumbnail .item:nth-child(1) {
+            overflow: hidden;
+            opacity: 0;
+            animation: showThumbnail .5s linear 1 forwards;
+        }
+
+        .carousel.next .arrows button,
+        .carousel.prev .arrows button {
+            pointer-events: none;
+        }
+
+        .carousel.prev .list .item:nth-child(2) .content .author,
+        .carousel.prev .list .item:nth-child(2) .content .title,
+        .carousel.prev .list .item:nth-child(2) .content .topic,
+        .carousel.prev .list .item:nth-child(2) .content .des,
+        .carousel.prev .list .item:nth-child(2) .content .buttons {
+            animation: contentOut 1.5s linear 1 forwards !important;
+        }
+
+        @keyframes contentOut {
+            to {
+                transform: translateY(-150px);
+                filter: blur(20px);
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 678px) {
+            .carousel .list .item .content {
+                padding-right: 0;
+            }
+
+            .carousel .list .item .content .title {
+                font-size: 30px;
+            }
+        }
+
+        /* Google Reviews Section */
+        .google-reviews {
+            background-color: #040203;
+            /* Match primary dark */
+            color: white;
+            padding: 80px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .google-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .google-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .excellence-glow {
+            color: #c76b10;
+            text-shadow: 0 0 15px rgba(230, 70, 70, 0.6), 0 0 30px rgba(0, 229, 255, 0.4);
+            font-weight: 800;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #1a1a1a;
+            padding: 12px 30px;
+            border-radius: 50px;
+            gap: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+        }
+
+        .rating-badge .fa-google {
+            background: white;
+            color: #c76b10;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .rating-badge .score {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .rating-badge .stars {
+            color: #FFD700;
+            font-size: 1.1rem;
+            display: flex;
+            gap: 4px;
+        }
+
+        .reviews-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 20px 50px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            justify-content: flex-start;
+        }
+
+        .reviews-container-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            /* Fade effect on sides */
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .reviews-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .review-card {
+            background: #0d0f11;
+            min-width: 350px;
+            max-width: 350px;
+            padding: 35px;
+            border-radius: 4px;
+            position: relative;
+            border-left: 3px solid #c76b10;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.05);
+            background: #141619;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .google-icon {
+            color: #c76b10;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .card-stars {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            gap: 3px;
+        }
+
+        .review-text {
+            color: #b0b0b0;
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .google-header h2 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .review-card {
+                min-width: 280px;
+            }
+
+            .feature-highlight-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .feature-specs {
+                justify-content: center;
+            }
+
+            .feature-tabs {
+                justify-content: center;
+            }
+        }
+
+        /* Feature Highlight Section */
+        .feature-highlight {
+            width: 100%;
+            background-color: white;
+            padding: 100px 0;
+            color: var(--primary);
+        }
+
+        .feature-highlight-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .feature-content {
+            padding-right: 40px;
+        }
+
+        .feature-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            color: var(--primary);
+            font-family: var(--font-heading);
+        }
+
+        .text-highlight {
+            color: var(--secondary);
+            /* Brand orange */
+        }
+
+        .feature-subtitle {
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        .feature-tabs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            border-bottom: none;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            background: #f8f9fa;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 250px;
+            max-width: 100%;
+        }
+
+        .tab-btn.active {
+            border-color: var(--secondary);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-btn.active::after {
+            display: none;
+        }
+
+        .tab-btn .model-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+        }
+
+        .tab-btn img {
+            width: 200px;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .carousel-thumbs {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .thumb-item {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .thumb-item.active {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-specs {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spec-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: var(--font-heading);
+            margin-bottom: 5px;
+        }
+
+        .spec-label {
+            color: #666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: opacity 0.4s ease;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+
+        @media (max-width: 992px) {
+            .feature-highlight-inner {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .feature-content {
+                padding-right: 0;
+                order: 1;
+            }
+
+            .feature-image-container {
+                order: 2;
+                margin-bottom: 30px;
+            }
+
+            .feature-title {
+                margin-bottom: 30px;
+                font-size: 3rem;
+            }
+
+            .feature-tabs {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .feature-specs {
+                justify-content: center;
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+
+            .feature-subtitle {
+                margin: 0 auto 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .feature-title {
+                font-size: 2.5rem;
+            }
+
+            .tab-btn {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .tab-btn img {
+                width: 100%;
+                height: auto;
+                max-height: 180px;
+            }
+
+            .spec-value {
+                font-size: 2.5rem;
+            }
+
+            .feature-specs {
+                gap: 20px;
+            }
+
+            .thumb-item {
+                width: 60px;
+                height: 45px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- WhatsApp button -->
-    <a href="https://wa.me/60122066333" 
-        target="_blank" rel="noreferrer noopener" 
-        id="whatsappBtn" aria-label="Chat on WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/767px-WhatsApp.svg.png" width="48px" height="48px">
-        </a>
+    <a href="https://wa.me/60122066333" target="_blank" rel="noreferrer noopener" id="whatsappBtn"
+        aria-label="Chat on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/767px-WhatsApp.svg.png"
+            width="48px" height="48px">
+    </a>
 
-<!-- Scroll to top button -->
-<button id="scrollToTopBtn" aria-label="Scroll to top">&#8679;</button>
+    <!-- Scroll to top button -->
+    <button id="scrollToTopBtn" aria-label="Scroll to top">&#8679;</button>
     <button id="scrollToTopBtn" aria-label="Scroll to top">&#8679;</button>
     <!-- Header -->
     <header>
@@ -1152,18 +1745,18 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#inventory">Cars</a></li>
-                    
+
                 </ul>
             </nav>
             <div class="logo">
                 <img src="ICar_2024_logo.png" class="icaurlogo" />
             </div>
-            
+
             <nav>
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Enquire now</a></li>
-                    
+
                 </ul>
             </nav>
         </div>
@@ -1174,11 +1767,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-title">
-        <img src="image/WHITE@4x.png" alt="Born To Play" class="hero-title-img">
-    </div>
+                    <img src="image/WHITE@4x.png" alt="Born To Play" class="hero-title-img">
+                </div>
 
                 <br>
-                
+
                 <div class="hero-btns">
                     <a href="#inventory" class="btn btn-primary">Browse Inventory</a>
                     <a href="#contact" class="btn btn-secondary">Schedule Test Drive</a>
@@ -1189,120 +1782,45 @@
 
     <!-- Featured Cars -->
     <section id="inventory">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Vehicles</h2>
-                <p>Explore our premium vehicles that combine performance, luxury, and value.</p>
-            </div>
-            
-            
-            
-            <div class="cars-grid">
-                <!-- Car 1 -->
-                <div class="car-card">
-                    <div class="car-img" style="background-image: url('image/icar03main.png');">
-                        <span class="car-badge">EV SUV</span>
+        <!-- Feature Highlight Section -->
+        <div class="feature-highlight">
+            <div class="feature-highlight-inner">
+                <div class="feature-content">
+                    <h2 class="feature-title">Car <span class="text-highlight">Models</span></h2>
+
+                    <div class="feature-tabs">
+                        <button class="tab-btn active" onclick="switchCar('03')">
+                            <span class="model-name">iCaur 03</span>
+                            <img src="image/icar03main.png" alt="03 Main">
+                        </button>
+                        <button class="tab-btn" onclick="switchCar('v23')">
+                            <span class="model-name">iCaur V23</span>
+                            <img src="image/v23main.png" alt="V23 Main">
+                        </button>
                     </div>
-                    <div class="car-info">
-                        <div class="car-title">
-                            <h3>iCaur 03</h3>
-                            <div class="car-price"></div>
+
+                    <div class="feature-specs">
+                        <div class="spec-item">
+                            <span class="spec-value" id="spec-speed">8.5s</span>
+                            <span class="spec-label">0-100 km/h</span>
                         </div>
-                        
-                        <div class="car-specs">
-                            <div class="spec">
-                                <i class="fa-solid fa-bolt"></i>
-                                <span>184 PS (135 kW) 220 Nm</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fa-solid fa-battery-full"></i>
-                                <span>50.6–69.8 kWh</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Electric</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-road"></i>
-                                <span>max range ~501 km</span>
-                            </div>
+                        <div class="spec-item">
+                            <span class="spec-value" id="spec-power">184 PS</span>
+                            <span class="spec-label">Power</span>
                         </div>
-                        <div class="car-actions">
-                            <a href="#carousel" class="btn btn-3rd">Details</a>
-                            <a href="#contact" class="btn btn-primary">Inquire</a>
+                        <div class="spec-item">
+                            <span class="spec-value" id="spec-range">501 km</span>
+                            <span class="spec-label">Range</span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Car 2 -->
-                <div class="car-card">
-                    <div class="car-img" style="background-image: url('image/icar03tmain.png');">
-                        <span class="car-badge">Rugged Sport</span>
+
+                <div class="feature-image-container">
+                    <div class="feature-image">
+                        <img src="image/icar03main.png" alt="iCaur 03" id="feature-img">
                     </div>
-                    <div class="car-info">
-                        <div class="car-title">
-                            <h3>iCaur 03T</h3>
-                            <div class="car-price"></div>
-                        </div>
-                        <p></p>
-                        <div class="car-specs">
-                            <div class="spec">
-                                <i class="fa-solid fa-bolt"></i>
-                                <span>184 PS (135 kW) 220 Nm</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fa-solid fa-battery-full"></i>
-                                <span>50.6–69.8 kWh</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Electric</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-road"></i>
-                                <span>max range ~501 km</span>
-                            </div>
-                        </div>
-                        <div class="car-actions">
-                            <a href="#carousel" class="btn btn-3rd">Details</a>
-                            <a href="#contact" class="btn btn-primary">Inquire</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Car 3 -->
-                <div class="car-card">
-                    <div class="car-img" style="background-image: url('image/v23main.png');">
-                        <span class="car-badge">EV SUV</span>
-                    </div>
-                    <div class="car-info">
-                        <div class="car-title">
-                            <h3>iCaur V23</h3>
-                            <div class="car-price"></div>
-                        </div>
-                        
-                        <div class="car-specs">
-                            <div class="spec">
-                                <i class="fa-solid fa-bolt"></i>
-                                <span>134 hp (100 kW) 180 Nm</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fa-solid fa-battery-full"></i>
-                                <span>59.9 kWh LFP</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Electric</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-road"></i>
-                                <span>max range ~550 km</span>
-                            </div>
-                        </div>
-                        <div class="car-actions">
-                            <a href="#carousel" class="btn btn-3rd">Details</a>
-                            <a href="#contact" class="btn btn-primary">Inquire</a>
-                        </div>
+                    <div class="carousel-thumbs" id="carousel-thumbs">
+                        <!-- Thumbs will be injected by JS -->
                     </div>
                 </div>
             </div>
@@ -1318,15 +1836,16 @@
                 <img src="image/icar03-1.png">
                 <div class="content">
                     <div class="author"></div>
-                    <div class="title"> <img src="image/iCAUR-LOGO-BLACK.png" alt="Born To Play" class="hero-title-img"></div><br>
+                    <div class="title"> <img src="image/iCAUR-LOGO-BLACK.png" alt="Born To Play" class="hero-title-img">
+                    </div><br>
                     <div class="topic"><img src="03/03_black.png" alt="Born To Play" class="hero-title-img"></div><br>
                     <div class="des des-black">
                         <!-- lorem 50 -->
-                       
+
                     </div>
                     <div class="buttons">
                         <button onclick="downloadPDF('iCAUR 03_ FLYER_FAOL.pdf')">SEE MORE</button>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1335,14 +1854,14 @@
                 <div class="content">
                     <div class="author"></div>
                     <div class="title">
-        <img src="image/iCAUR-LOGO-BLACK.png" alt="Born To Play" class="hero-title-img">
-    </div><br>
+                        <img src="image/iCAUR-LOGO-BLACK.png" alt="Born To Play" class="hero-title-img">
+                    </div><br>
                     <div class="topic"><img src="03T/03T_black.png" alt="Born To Play" class="hero-title-img"></div>
                     <div class="des des-black">
-                          </div><br>
-                    <div class="buttons" >
+                    </div><br>
+                    <div class="buttons">
                         <button onclick="downloadPDF('iCAUR 03T_FLYER.pdf')">SEE MORE</button>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1351,13 +1870,13 @@
                 <div class="content">
                     <div class="author"></div>
                     <div class="title">
-        <img src="image/iCAUR-LOGO-WHITE.png" alt="Born To Play" class="hero-title-img">
-    </div> <br>
+                        <img src="image/iCAUR-LOGO-WHITE.png" alt="Born To Play" class="hero-title-img">
+                    </div> <br>
                     <div class="topic"><img src="V23/V23_black.png" alt="Born To Play" class="hero-title-img"></div><br>
                     <div class="des"></div>
                     <div class="buttons">
                         <button onclick="downloadPDF('iCAUR V23_ FLYER_FAOL.pdf')">SEE MORE</button>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1365,14 +1884,15 @@
                 <img src="image/icar03-4.jpg">
                 <div class="content">
                     <div class="author"></div>
-                   <div class="title">
-        <img src="image/iCAUR-LOGO-WHITE.png" alt="Born To Play" class="hero-title-img">
-    </div>
-                    <div class="topic"><img src="image/Infinity_Audio_Logo.png" alt="Born To Play" class="hero-title-img"></div>
+                    <div class="title">
+                        <img src="image/iCAUR-LOGO-WHITE.png" alt="Born To Play" class="hero-title-img">
+                    </div>
+                    <div class="topic"><img src="image/Infinity_Audio_Logo.png" alt="Born To Play"
+                            class="hero-title-img"></div>
                     <div class="des">
-                         </div>
+                    </div>
                     <div class="buttons">
-                        
+
                     </div>
                 </div>
             </div>
@@ -1386,7 +1906,7 @@
                         iCaur 03
                     </div>
                     <div class="description">
-                        
+
                     </div>
                 </div>
             </div>
@@ -1397,7 +1917,7 @@
                         iCaur 03T
                     </div>
                     <div class="description">
-                        
+
                     </div>
                 </div>
             </div>
@@ -1408,7 +1928,7 @@
                         iCaur V23
                     </div>
                     <div class="description">
-                        
+
                     </div>
                 </div>
             </div>
@@ -1427,15 +1947,113 @@
         <!-- next prev -->
 
         <div class="arrows">
-            <button id="prev"><</button>
-            <button id="next">></button>
+            <button id="prev">
+                < </button>
+                    <button id="next">></button>
         </div>
         <!-- time running -->
         <div class="time"></div>
     </div>
     </div>
-    
+
     <script src="app.js"></script>
+    <script>
+        const carData = {
+            '03': {
+                speed: '8.5s',
+                power: '184 PS',
+                range: '501 km',
+                img: 'image/car/icar03main.webp',
+                gallery: [
+                    'image/car/icar03main.webp',
+                    'image/car/icar03-2.webp',
+                    'image/car/icar03-3.webp',
+                    'image/car/03-4.webp',
+                    'image/car/03-5.webp'
+
+                ]
+            },
+            'v23': {
+                speed: '9.0s',
+                power: '100 kW',
+                range: '550 km',
+                img: 'image/car/v23main.webp',
+                gallery: [
+                    'image/car/v23main.webp',
+                    'image/car/v23-1.webp',
+                    'image/car/v23-2.webp',
+                    'image/car/v23-3.webp',
+                    'image/car/v23-4.webp',
+                    'image/car/v23-5.webp'
+                ]
+            }
+        };
+
+        function switchCar(model) {
+            // Update active tab box
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.onclick.toString().includes(model)) btn.classList.add('active');
+            });
+
+            // Fade out main image
+            const imgEl = document.getElementById('feature-img');
+            imgEl.classList.add('fade-out');
+
+            setTimeout(() => {
+                // Update text content
+                const data = carData[model];
+                document.getElementById('spec-speed').innerText = data.speed;
+                document.getElementById('spec-power').innerText = data.power;
+                document.getElementById('spec-range').innerText = data.range;
+
+                // Update Main Image
+                imgEl.src = data.img;
+                imgEl.alt = `iCaur ${model}`;
+
+                // Update Gallery Thumbs
+                updateGallery(model);
+
+                // Fade in
+                imgEl.classList.remove('fade-out');
+            }, 300);
+        }
+
+        function updateGallery(model) {
+            const thumbsContainer = document.getElementById('carousel-thumbs');
+            thumbsContainer.innerHTML = ''; // Clear existing
+
+            const data = carData[model];
+            if (!data.gallery) return;
+
+            data.gallery.forEach((src, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = `thumb-item ${index === 0 ? 'active' : ''}`;
+                thumb.onclick = () => switchFeatureImage(src, thumb);
+
+                const img = document.createElement('img');
+                img.src = src;
+                thumb.appendChild(img);
+
+                thumbsContainer.appendChild(thumb);
+            });
+        }
+
+        function switchFeatureImage(src, thumbEl) {
+            const imgEl = document.getElementById('feature-img');
+            // update main image
+            imgEl.src = src;
+
+            // update active state of thumbs
+            document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+            thumbEl.classList.add('active');
+        }
+
+        // Initialize gallery for default car (03) on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateGallery('03');
+        });
+    </script>
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -1444,7 +2062,7 @@
                 <h2>Our Premium Services</h2>
                 <p>We go beyond just selling cars. Our comprehensive services ensure your complete satisfaction.</p>
             </div>
-            
+
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -1453,7 +2071,7 @@
                     <h3>Vehicle Financing</h3>
                     <p>Competitive rates and flexible terms tailored to your financial situation.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
@@ -1461,7 +2079,7 @@
                     <h3>Expert Maintenance</h3>
                     <p>Factory-trained technicians using genuine parts for optimal performance.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-sync"></i>
@@ -1469,7 +2087,7 @@
                     <h3>Trade-In Evaluation</h3>
                     <p>Get top dollar for your current vehicle with our fair appraisal process.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
@@ -1482,58 +2100,115 @@
     </section>
 
     <!-- Testimonials Section -->
-<section id="testimonials" aria-label="Customer testimonials">
-    <div class="container">
-        <div class="section-title">
-            <h2>Customer Testimonials</h2>
-            <p>Hear what our satisfied customers have to say about their experience with us.</p>
+    <section id="testimonials" class="google-reviews" aria-label="Customer testimonials">
+        <div class="reviews-container-wrapper">
+            <div class="container">
+                <div class="google-header">
+                    <h2>DRIVEN BY <span class="excellence-glow">EXCELLENCE</span></h2>
+                    <div class="rating-badge">
+                        <div class="google-logo-bg">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <span class="score">4.9/5</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-slider">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <span class="reviewer-name">Sarah L.</span>
+                        <i class="fab fa-google google-icon"></i>
+                    </div>
+                    <div class="card-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Switching to the Voyager X was the best decision. It's spacious, futuristic,
+                        and the range is incredible. Truly a premium experience."</p>
+                </div> <!-- END Review 1 -->
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <span class="reviewer-name">Michael R.</span>
+                        <i class="fab fa-google google-icon"></i>
+                    </div>
+                    <div class="card-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Exceptional service from start to finish. The test drive was immersive, and
+                        the car exceeded all expectations. Highly recommended."</p>
+                </div> <!-- END Review 2 -->
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <span class="reviewer-name">Elena K.</span>
+                        <i class="fab fa-google google-icon"></i>
+                    </div>
+                    <div class="card-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"The attention to detail in the interior is unmatched. It feels like a
+                        spaceship. This is the future."</p>
+                </div> <!-- END Review 3 -->
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <span class="reviewer-name">David T.</span>
+                        <i class="fab fa-google google-icon"></i>
+                    </div>
+                    <div class="card-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Incredible performance and styling. The team made the buying process smooth
+                        and enjoyable."</p>
+                </div> <!-- END Review 4 -->
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <span class="reviewer-name">James W.</span>
+                        <i class="fab fa-google google-icon"></i>
+                    </div>
+                    <div class="card-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"A truly seamless buying experience. The staff were knowledgeable and the car
+                        itself is a marvel of engineering."</p>
+                </div> <!-- END Review 5 -->
+            </div>
         </div>
-        
-        <div class="testimonials-container" role="region" aria-label="Testimonial slider">
-            <!-- Testimonial Items -->
-            <div class="testimonial active" aria-hidden="false">
-                <div class="client-img">
-                    <img src="customer1.png" width="80" height="80">
-                </div>
-                <blockquote class="testimonial-text">
-                    <p>"Best car buying experience I’ve ever had — great deals, honest advice, and excellent after-sales service."</p>
-                </blockquote>
-                <div class="client-info">
-                    <div class="client-name">Mr Lim Wei Sheng</div>
-                    <div class="client-position">Business Executive</div>
-                </div>
-            </div>
-            
-            <div class="testimonial" aria-hidden="true">
-                <div class="client-img">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Williams" width="80" height="80">
-                </div>
-                <blockquote class="testimonial-text">
-                    <p>"I was nervous about buying a luxury car for the first time, but the staff walked me through every step. Their knowledge and patience made me feel completely confident in my purchase."</p>
-                </blockquote>
-                <div class="client-info">
-                    <div class="client-name">Sarah Williams</div>
-                    <div class="client-position">Marketing Director</div>
-                </div>
-            </div>
-            
-            <div class="testimonial" aria-hidden="true">
-                <div class="client-img">
-                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Chen" width="80" height="80">
-                </div>
-                <blockquote class="testimonial-text">
-                    <p>"The after-sales service has been outstanding. They remembered all my preferences and made the maintenance appointments incredibly convenient. Truly a premium experience!"</p>
-                </blockquote>
-                <div class="client-info">
-                    <div class="client-name">Michael Chen</div>
-                    <div class="client-position">Software Engineer</div>
-                </div>
-            </div>
-            
-            
-        </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Contact Section -->
@@ -1543,59 +2218,107 @@
                 <h2>Contact Us</h2>
                 <p>Have questions or ready to schedule a test drive? Reach out to our team today.</p>
             </div>
-            
+
             <div class="contact-container">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fa fa-map-marker-alt"></i>
+                    <!-- Location 1 -->
+                    <div class="location-block">
+                        <h3 class="location-title">iCAUR Bukit Jalil <span class="location-subtitle">ROVERDRIVE SDN
+                                BHD</span></h3>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Address</h3>
+                                <p>Level 2, Pavilion, 2, Persiaran Jalil 8, Bukit Jalil,
+                                    57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h3>Our Location</h3>
-                            <p> Level 2, Pavilion, 2, Persiaran Jalil 8, Bukit Jalil,<br> 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Office Hour</h3>
+                                <p class="contact-important">Monday - Friday: 11:00 AM - 7:00 PM <br>Saturday & Sunday:
+                                    10:30 AM - 7:30 PM</p>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Mobile/Whatsapp</h3>
+                                <p class="contact-important">+60 12-206 6333</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+
+                    <!-- Location 2 -->
+                    <div class="location-block">
+                        <h3 class="location-title">iCaur Bandar Kinrara 3S <span class="location-subtitle">ROVERDRIVE
+                                SDN BHD</span></h3>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Address</h3>
+                                <p>1, Jalan BK 1/19, Bandar Kinrara, <br>47100 Puchong, Selangor</p>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h3>Phone Number</h3>
-                            <p>+60 12-206 6333</p>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Office Hour</h3>
+                                <p class="contact-important">9AM-7PM</p>
+
+                            </div>
                         </div>
-                    </div>
-                    
-                   
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Working Hours</h3>
-                            <p>Monday - Friday: 11:00 AM - 7:00 PM<br>Saturday & Sunday: 10:30 AM - 7:30 PM</p>
+
+
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Mobile/Whatsapp</h3>
+                                <p class="contact-important">+6010-292 6728</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" placeholder="John Lee" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" placeholder="john@example.com" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
                             <input type="tel" id="phone" placeholder="(+60) 12-345 6789" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="interest">Vehicle Interest</label>
                             <select id="interest">
@@ -1603,15 +2326,15 @@
                                 <option value="03">iCaur 03</option>
                                 <option value="03T">iCaur 03T</option>
                                 <option value="V23">iCaur V23</option>
-                                
+
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Your Message (optional)</label>
                             <textarea id="message" placeholder="I'm interested in learning more about..."></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
@@ -1624,16 +2347,18 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>iCAUR Bukit Jalil - <br>Rover Drive Sdn Bhd</h3>
-                    <p>Your trusted partner for luxury vehicles. We pride ourselves on exceptional service and an unparalleled selection of <br>premium EV.</p>
+                    <h3>Rover Drive Sdn Bhd</h3>
+                    <p>Your trusted partner for luxury vehicles. We pride ourselves on exceptional service and an
+                        unparalleled selection of <br>premium EV.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61576941476267"><i class="fab fa-facebook-f"></i></a>
-                        
+                        <a href="https://www.facebook.com/profile.php?id=61576941476267"><i
+                                class="fab fa-facebook-f"></i></a>
+
                         <a href="https://www.instagram.com/icaur.bukitjalil"><i class="fab fa-instagram"></i></a>
-                        
+
                     </div>
                 </div>
-                
+
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -1644,22 +2369,23 @@
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-col">
                     <h3>Featured Cars</h3>
                     <ul class="footer-links">
                         <li><a href="#carousel">ICAUR 03</a></li>
-                        <li><a href="#carousel">ICAUR 03T</a></li>
+
                         <li><a href="#carousel">ICAUR V23</a></li>
-                        
+
                     </ul>
                 </div>
-                
-                
+
+
             </div>
-            
+
             <div class="copyright">
-                <p>&copy; 2025 iCAUR Bukit Jalil - Rover Drive Sdn Bhd. All Rights Reserved. | Designed by NewStrength Media Malaysia </p>
+                <p>&copy; 2025 Rover Drive Sdn Bhd. All Rights Reserved. | Designed by NewStrength
+                    Media Malaysia </p>
             </div>
         </div>
     </footer>
@@ -1668,11 +2394,11 @@
         // Mobile Navigation Toggle
         const mobileToggle = document.querySelector('.mobile-toggle');
         const nav = document.querySelector('nav');
-        
+
         mobileToggle.addEventListener('click', () => {
             nav.classList.toggle('active');
         });
-        
+
         // Close mobile nav when clicking a link
         const navLinks = document.querySelectorAll('nav ul li a');
         navLinks.forEach(link => {
@@ -1680,66 +2406,66 @@
                 nav.classList.remove('active');
             });
         });
-        
+
         // Testimonial Slider
-document.addEventListener('DOMContentLoaded', function() {
-    const testimonials = document.querySelectorAll('.testimonial');
-    const dots = document.querySelectorAll('.nav-dot');
-    let currentTestimonial = 0;
-    let intervalId;
-    
-    // Initialize - show first testimonial if none is active
-    if (document.querySelector('.testimonial.active') === null && testimonials.length > 0) {
-        testimonials[0].classList.add('active');
-        dots[0]?.classList.add('active');
-    }
-    
-    function showTestimonial(index) {
-        // Ensure index is within bounds
-        index = (index + testimonials.length) % testimonials.length;
-        
-        testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        testimonials[index].classList.add('active');
-        dots[index]?.classList.add('active');
-        currentTestimonial = index;
-    }
-    
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showTestimonial(index);
-            resetInterval();
+        document.addEventListener('DOMContentLoaded', function () {
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.nav-dot');
+            let currentTestimonial = 0;
+            let intervalId;
+
+            // Initialize - show first testimonial if none is active
+            if (document.querySelector('.testimonial.active') === null && testimonials.length > 0) {
+                testimonials[0].classList.add('active');
+                dots[0]?.classList.add('active');
+            }
+
+            function showTestimonial(index) {
+                // Ensure index is within bounds
+                index = (index + testimonials.length) % testimonials.length;
+
+                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                testimonials[index].classList.add('active');
+                dots[index]?.classList.add('active');
+                currentTestimonial = index;
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showTestimonial(index);
+                    resetInterval();
+                });
+            });
+
+            function startInterval() {
+                intervalId = setInterval(() => {
+                    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                    showTestimonial(currentTestimonial);
+                }, 5000);
+            }
+
+            function resetInterval() {
+                clearInterval(intervalId);
+                startInterval();
+            }
+
+            // Pause on hover
+            const sliderContainer = document.querySelector('.testimonial-slider'); // Add this container in your HTML
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', () => clearInterval(intervalId));
+                sliderContainer.addEventListener('mouseleave', startInterval);
+            }
+
+            // Start the initial interval
+            startInterval();
         });
-    });
-    
-    function startInterval() {
-        intervalId = setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }, 5000);
-    }
-    
-    function resetInterval() {
-        clearInterval(intervalId);
-        startInterval();
-    }
-    
-    // Pause on hover
-    const sliderContainer = document.querySelector('.testimonial-slider'); // Add this container in your HTML
-    if (sliderContainer) {
-        sliderContainer.addEventListener('mouseenter', () => clearInterval(intervalId));
-        sliderContainer.addEventListener('mouseleave', startInterval);
-    }
-    
-    // Start the initial interval
-    startInterval();
-});
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
@@ -1749,7 +2475,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
+
         // Filter buttons active state
         const filterButtons = document.querySelectorAll('.filter-btn');
         filterButtons.forEach(button => {
@@ -1760,84 +2486,81 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     </script>
     <script>
-  (function() {
-    const scrollBtn = document.getElementById('scrollToTopBtn');
+        (function () {
+            const scrollBtn = document.getElementById('scrollToTopBtn');
 
-    // Show button when scrolled down 300px
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollBtn.classList.add('show');
-      } else {
-        scrollBtn.classList.remove('show');
-      }
-    });
+            // Show button when scrolled down 300px
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.add('show');
+                } else {
+                    scrollBtn.classList.remove('show');
+                }
+            });
 
-    // Scroll smoothly to top when clicked
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      scrollBtn.blur(); // remove focus after click for accessibility
-    });
-  })();
-</script>
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Stop form from refreshing the page
+            // Scroll smoothly to top when clicked
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                scrollBtn.blur(); // remove focus after click for accessibility
+            });
+        })();
+    </script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Stop form from refreshing the page
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwYgBD8d1QP0o08tZNuw__IVsNTGpztcp5hHQLyOuZCsl-SBUAANXz0H9rmwQQptaDy0w/exec"; // <-- Replace this with your deployed script URL
+            const scriptURL = "https://script.google.com/macros/s/AKfycbwYgBD8d1QP0o08tZNuw__IVsNTGpztcp5hHQLyOuZCsl-SBUAANXz0H9rmwQQptaDy0w/exec"; // <-- Replace this with your deployed script URL
 
-    const data = {
-      fullName: document.getElementById("name").value,
-      emailAddress: document.getElementById("email").value,
-      phoneNumber: document.getElementById("phone").value,
-      carInterest: document.getElementById("interest").value,
-      message: document.getElementById("message").value
-    };
+            const data = {
+                fullName: document.getElementById("name").value,
+                emailAddress: document.getElementById("email").value,
+                phoneNumber: document.getElementById("phone").value,
+                carInterest: document.getElementById("interest").value,
+                message: document.getElementById("message").value
+            };
 
-    fetch(scriptURL, {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-    .then(response => {
-      alert("Thank you! Your message has been sent.");
-      document.getElementById("contactForm").reset(); // Clear form
-    })
-    .catch(error => {
-      console.error("Error!", error.message);
-      alert("Oops! There was an error submitting the form.");
-    });
-  });
-</script>
-<script>
-  document.getElementById("newsletterForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent scrolling or refreshing
+            fetch(scriptURL, {
+                method: "POST",
+                body: JSON.stringify(data),
+            })
+                .then(response => {
+                    alert("Thank you! Your message has been sent.");
+                    document.getElementById("contactForm").reset(); // Clear form
+                })
+                .catch(error => {
+                    console.error("Error!", error.message);
+                    alert("Oops! There was an error submitting the form.");
+                });
+        });
+    </script>
+    <script>
+        document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent scrolling or refreshing
 
-    const email = document.getElementById("newsletterEmail").value;
+            const email = document.getElementById("newsletterEmail").value;
 
-    fetch("https://script.google.com/macros/s/AKfycbzCKlM6kOKDCC16ZhuqRHL5reLOQsBw-0DGOpcgzhX-9CurJ2NPVidzRkzhjLunVkVr9g/exec", {
-      method: "POST",
-      body: JSON.stringify({ email }),
-    })
-    .then(response => {
-      alert("Subscribed successfully!");
-      document.getElementById("newsletterForm").reset();
-    })
-    .catch(error => {
-      console.error("Error!", error.message);
-      alert("Subscription failed. Please try again later.");
-    });
-  });
-</script>
-<script>
-  function downloadPDF(fileName) {
-    const link = document.createElement('a');
-    link.href = fileName;
-    link.download = fileName;
-    link.click();
-  }
-</script>
+            fetch("https://script.google.com/macros/s/AKfycbzCKlM6kOKDCC16ZhuqRHL5reLOQsBw-0DGOpcgzhX-9CurJ2NPVidzRkzhjLunVkVr9g/exec", {
+                method: "POST",
+                body: JSON.stringify({ email }),
+            })
+                .then(response => {
+                    alert("Subscribed successfully!");
+                    document.getElementById("newsletterForm").reset();
+                })
+                .catch(error => {
+                    console.error("Error!", error.message);
+                    alert("Subscription failed. Please try again later.");
+                });
+        });
+    </script>
+    <script>
+        function downloadPDF(fileName) {
+            const link = document.createElement('a');
+            link.href = fileName;
+            link.download = fileName;
+            link.click();
+        }
+    </script>
 </body>
+
 </html>
-
-
-
-
