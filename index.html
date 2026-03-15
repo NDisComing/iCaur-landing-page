@@ -247,33 +247,109 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
-        .hero {
+        /* Hero Carousel Section */
+        .hero-slider {
+            position: relative;
             height: 100vh;
-            background: linear-gradient(rgba(10, 37, 64, 0.3), rgba(10, 37, 64, 0.4)), url('https://www.lowyat.net/wp-content/uploads/2025/04/iCAUR-Malaysia-teaser-1.jpg') no-repeat center center/cover;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            z-index: 1;
+            transform: scale(1.05);
+            /* Prevent the inline background from rendering on the wrapper itself */
+            background-size: 0 0 !important; 
+            overflow: hidden;
             display: flex;
             align-items: center;
-            color: white;
-            padding-top: 70px;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+            transform: scale(1);
+        }
+
+        .hero-slide::before,
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: inherit;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-slide::before {
+            background-size: cover;
+            filter: blur(25px) brightness(0.6);
+            transform: scale(1.1); /* overscale to remove blur edges */
+            z-index: -1;
+        }
+
+        .hero-slide::after {
+            background-size: cover; /* default desktop */
+            z-index: 0;
+        }
+
+
+
+        .hero-slide .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
 
         .hero-content {
             max-width: 650px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease 0.5s;
+        }
+
+        .hero-slide.active .hero-content {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .hero-content h1 {
             font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.1;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: #fff;
         }
 
-        .hero-content p {
+        .hero-title {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .hero-title-img {
+            display: block;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .hero-subtitle {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            color: #fff;
             opacity: 0.9;
         }
 
@@ -282,24 +358,83 @@
             gap: 20px;
         }
 
-        .hero-title {
-            text-align: center;
-            /* centers it horizontally */
-            margin-bottom: 20px;
-            /* space below if needed */
+        /* Hero Carousel Controls */
+        .hero-nav {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
         }
 
-        .hero-title-img {
-            display: block;
-            /* so it behaves like text (block element) */
-            width: 400px;
-            /* adjust as needed */
-            max-width: 100%;
-            /* responsive */
+        .hero-dot {
+            width: 40px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
 
-            /* Align left with text */
-            margin-left: 0;
-            margin-right: auto;
+        .hero-dot.active {
+            background: var(--secondary);
+            width: 60px;
+        }
+
+        .hero-arrows {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 10;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .hero-arrow {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .hero-arrow:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-arrows {
+                display: none;
+            }
+
+            .hero-slide::after {
+                background-size: contain;
+            }
+
+            .hero-title-img {
+                width: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
         }
 
         /* Featured Cars */
@@ -1777,20 +1912,30 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-title">
-                    <img src="image/WHITE@4x.png" alt="Born To Play" class="hero-title-img">
-                </div>
+    <section class="hero-slider" id="home">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image: url('herov23.png');">
+        </div>
 
-                <br>
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: url('hero03.png');">
+        </div>
 
-                <div class="hero-btns">
-                    <a href="#inventory" class="btn btn-primary">Browse Inventory</a>
-                    <a href="#contact" class="btn btn-secondary">Schedule Test Drive</a>
-                </div>
-            </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: url('iCAUR-Malaysia-teaser-1.avif');">
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="hero-arrows">
+            <button class="hero-arrow hero-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="hero-arrow hero-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Dots -->
+        <div class="hero-nav">
+            <div class="hero-dot active" onclick="goToHeroSlide(0)"></div>
+            <div class="hero-dot" onclick="goToHeroSlide(1)"></div>
+            <div class="hero-dot" onclick="goToHeroSlide(2)"></div>
         </div>
     </section>
 
@@ -2207,8 +2352,7 @@
                                 <p>Level 2, Pavilion, 2, Persiaran Jalil 8, Bukit Jalil,
                                     57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
                                 <div style="margin-top: 10px;">
-                                    <a href="https://waze.com/ul/hw2833e4q3" target="_blank"
-                                        rel="noopener noreferrer"
+                                    <a href="https://waze.com/ul/hw2833e4q3" target="_blank" rel="noopener noreferrer"
                                         style="color: #33ccff; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">
                                         <i class="fab fa-waze" style="font-size: 1.2rem;"></i> Open in Waze
                                     </a>
@@ -2545,6 +2689,65 @@
             link.download = fileName;
             link.click();
         }
+    </script>
+    <script>
+        // Hero Slider Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+            const prevBtn = document.querySelector('.hero-prev');
+            const nextBtn = document.querySelector('.hero-next');
+            let currentSlide = 0;
+            let slideInterval;
+
+            if (slides.length === 0) return;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                let next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }
+
+            function prevSlide() {
+                let prev = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prev);
+            }
+
+            window.goToHeroSlide = function (index) {
+                showSlide(index);
+                resetInterval();
+            };
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetInterval();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetInterval();
+                });
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 6000);
+            }
+
+            // Start auto slide
+            slideInterval = setInterval(nextSlide, 6000);
+        });
     </script>
 </body>
 
